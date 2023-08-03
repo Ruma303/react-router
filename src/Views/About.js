@@ -1,6 +1,9 @@
-import React from 'react'
+import React from 'react';
+import { useLocation } from 'react-router-dom';
 
 const About = () => {
+    const location = useLocation();
+    console.log(location.pathname);
     return (
         <>
             <h1>About</h1>

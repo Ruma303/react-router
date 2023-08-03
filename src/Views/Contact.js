@@ -1,6 +1,9 @@
 import React, { useState } from 'react';
+import { useLocation } from 'react-router-dom';
 
 function ContactForm() {
+    const location = useLocation();
+    console.log(location.pathname);
     const [name, setName] = useState('');
     const [message, setMessage] = useState('');
 

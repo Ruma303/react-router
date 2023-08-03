@@ -11,7 +11,7 @@ import Navbar from './Components/Navbar';
 import Dashboard from './Dashboard/Dashboard';
 import Login from './Dashboard/Login';
 import Register from './Dashboard/Register';
-import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, Link} from 'react-router-dom';
 
 function App() {
     return (
@@ -25,7 +25,7 @@ function App() {
                     <Link to="/contact">Contact</Link>
                 </nav> */}
                 <Routes>
-                    <Route path="/" element={<Home />} />
+                    <Route path="/" element={<Home />}  />
                     <Route path="/about" element={<About />} />
                     <Route path="/contact" element={<Contact />} />
                     {/* <Route path="*" element={<ErrorPage />} /> */}
