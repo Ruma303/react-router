@@ -1,11 +1,15 @@
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import '@popperjs/core';
+import 'bootstrap/dist/js/bootstrap.bundle.min';
 import About from './Views/About';
 import Contact from './Views/Contact';
 import Home from './Views/Home';
 import ErrorPage from './Views/ErrorPage';
 import React from 'react';
 import Navbar from './Components/Navbar';
+import Login from './Dashboard/Login';
+import Register from './Dashboard/Register';
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 
 function App() {
@@ -23,7 +27,16 @@ function App() {
                     <Route path="/" element={<Home />} />
                     <Route path="/about" element={<About />} />
                     <Route path="/contact" element={<Contact />} />
-                    <Route path="/*" element={<ErrorPage />} />
+                    {/* <Route path="*" element={<ErrorPage />} /> */}
+
+                    {/* Nested Routes */}
+                    <Route path="dashboard">
+                        <Route path="login" element={<Login />} />
+                        <Route path="register" element={<Register />} />
+                    </Route>
+
+                    {/* Fallback Routes */}
+                    <Route path="*" element={<ErrorPage />} />
                 </Routes>
             </Router>
         </div>
