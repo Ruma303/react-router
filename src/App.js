@@ -8,6 +8,7 @@ import Home from './Views/Home';
 import ErrorPage from './Views/ErrorPage';
 import React from 'react';
 import Navbar from './Components/Navbar';
+import Dashboard from './Dashboard/Dashboard';
 import Login from './Dashboard/Login';
 import Register from './Dashboard/Register';
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
@@ -30,12 +31,22 @@ function App() {
                     {/* <Route path="*" element={<ErrorPage />} /> */}
 
                     {/* Nested Routes */}
-                    <Route path="dashboard">
+                    {/* <Route path="dashboard" element={<h1>Dashboard</h1>}>
+                        <Route path="login" element={<Login />} />
+                        <Route path="register" element={<Register />} />
+                    </Route> */}
+
+                    {/* Nested Routes: Outlet */}
+                    <Route path="dashboard" element={<Dashboard />}>
                         <Route path="login" element={<Login />} />
                         <Route path="register" element={<Register />} />
                     </Route>
 
-                    {/* Fallback Routes */}
+
+
+
+
+                    {/* Fallback Route */}
                     <Route path="*" element={<ErrorPage />} />
                 </Routes>
             </Router>
