@@ -11,6 +11,7 @@ import Navbar from './Components/Navbar';
 import Dashboard from './Dashboard/Dashboard';
 import Login from './Dashboard/Login';
 import Register from './Dashboard/Register';
+import ProfileList from './Profiles/ProfileList';
 import { BrowserRouter as Router, Routes, Route, Link} from 'react-router-dom';
 
 function App() {
@@ -43,7 +44,7 @@ function App() {
                     </Route>
 
 
-
+                    {/* Rotte con parametri */}
 
 
                     {/* Fallback Route */}
