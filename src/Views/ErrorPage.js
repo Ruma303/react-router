@@ -1,10 +1,12 @@
-import React from 'react'
-
+import React from 'react';
+import { useNavigate } from 'react-router-dom';
 const ErrorPage = () => {
+    const backToHomepage = useNavigate();
     return (<>
         <h2>404 - Pagina non trovata.</h2>
-        <a href="/" className='btn btn-primary'>
-            Torna alla homepage</a>
+        <button onClick={() => backToHomepage("/")}
+            className='btn btn-primary'>
+            Torna alla homepage</button>
     </>)
 }
 

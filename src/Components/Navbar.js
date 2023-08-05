@@ -38,6 +38,10 @@ const Navbar = () => {
                             <NavLink className="nav-link" to="dashboard/register" exact>
                                 Register</NavLink>
                         </li>
+                        <li className="nav-item">
+                            <NavLink className="nav-link" to="profile/:profileId">
+                                User</NavLink>
+                        </li>
                     </ul>
                 </div>
             </div>
