@@ -11,7 +11,7 @@ import Navbar from './Components/Navbar';
 import Dashboard from './Dashboard/Dashboard';
 import Login from './Dashboard/Login';
 import Register from './Dashboard/Register';
-import Profile from './Profiles/Profile';
+import ProfileList from './Profiles/ProfileList';
 import { BrowserRouter as Router, Routes, Route, Link} from 'react-router-dom';
 
 function App() {
@@ -45,9 +45,7 @@ function App() {
 
 
                     {/* Rotte con parametri */}
-                    <Route path="profile">
-                        <Route path=":profileId" element={<Profile />} />
-                    </Route>
+
 
                     {/* Fallback Route */}
                     <Route path="*" element={<ErrorPage />} />
