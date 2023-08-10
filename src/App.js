@@ -21,16 +21,17 @@ function App() {
         <div className="App container-fluid py-2">
             <h1 className='fw-bold'>App.js</h1>
             <Router>
-                <Navbar />
                 {/* <nav className='d-flex gap-2 justify-content-center'>
                     <Link to="/">Home</Link>
                     <Link to="/about">About</Link>
                     <Link to="/contact">Contact</Link>
                 </nav> */}
+                <Navbar />
                 <Routes>
                     <Route path="/" element={<Home />} />
                     <Route path="/about" element={<About />} />
                     <Route path="/contact" element={<Contact />} />
+
                     {/* <Route path="*" element={<ErrorPage />} /> */}
 
                     {/* Nested Routes */}
