@@ -1,47 +1,32 @@
-/* import { useState, useEffect } from "react";
+import { useContext } from "react";
 
 export default function useAuth() {
-  const [isAuthenticated, setIsAuthenticated] = useState(Boolean(localStorage.getItem('auth')));
 
-  useEffect(() => {
-    const auth = localStorage.getItem('auth');
-    setIsAuthenticated(Boolean(auth));
-  }, []);
+}
 
-  const login = () => {
-    localStorage.setItem('auth', 'true');
-    setIsAuthenticated(true);
-  };
 
-  const logout = () => {
-    localStorage.removeItem('auth');
-    setIsAuthenticated(false);
-  };
+/* export default function useAuth() {
+    const [isAuthenticated, setIsAuthenticated] = useState(Boolean(localStorage.getItem('auth')));
 
-  return {
-    isAuthenticated,
-    login,
-    logout
-  };
-} */
+    useEffect(() => {
+        const auth = localStorage.getItem('auth');
+        setIsAuthenticated(Boolean(auth));
+    }, []);
 
-import { useState, useEffect } from "react";
-export default function useAuth() {
-    const [user, setUser] = React.useState(null);
-
-    const signIn = (cb) => {
-        setUser({ name: 'User' });
-        cb();
+    const login = () => {
+        localStorage.setItem('auth', 'true');
+        setIsAuthenticated(true);
     };
 
-    const signOut = (cb) => {
-        setUser(null);
-        cb();
+    const logout = () => {
+        localStorage.removeItem('auth');
+        setIsAuthenticated(false);
     };
 
     return {
-        user,
-        signIn,
-        signOut,
+        isAuthenticated,
+        login,
+        logout
     };
-};
+}
+ */

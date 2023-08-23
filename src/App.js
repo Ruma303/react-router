@@ -1,29 +1,58 @@
-import './App.css';
-import 'bootstrap/dist/css/bootstrap.min.css';
-import '@popperjs/core';
-import 'bootstrap/dist/js/bootstrap.bundle.min';
-import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
-
-function App() {
+import '../node_modules/bootstrap/dist/css/bootstrap.min.css'
+import './App.css'
+import { useState } from 'react'
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import MenuBar from './components/MenuBar'
+import Home from './components/Home'
+import Dashboard from './components/Dashboard'
+import Products from './components/Products'
+import Protected from './components/Protected'
+export default function App() {
+    const [isSignedIn, setIsSignedIn] = useState(null)
+    const signIn = () => {
+        setIsSignedIn(true)
+    }
+    const signOut = () => {
+        setIsSignedIn(false)
+    }
     return (
-        <div className="App container-fluid py-2">
-            <h1 className='fw-bold'>Protected Routes</h1>
-            <Navigation />
-            <Routes>
-                <Route path="dashboard" element={<Dashboard />} />
-                <Route path="admin" element={<Admin />} />
-                <Route path="*" element={<p>404 - La pagina non esiste!</p>} />
-            </Routes>
+        <div className="container mt-5">
+            <h2 className="mb-5 text-center">React Protected Routes Example</h2>
+            <BrowserRouter>
+                <MenuBar />
+                <Routes>
+                    <Route path="/" element={<Home />} />
+                    <Route
+                        path="/dashboard"
+                        element={
+                            <Protected isSignedIn={isSignedIn}>
+                                <Dashboard />
+                            </Protected>
+                        }
+                    />
+                    <Route
+                        path="/products"
+                        element={
+                            <Protected isSignedIn={isSignedIn}>
+                                <Products />
+                            </Protected>
+                        }
+                    />
+                </Routes>
+                {isSignedIn ? (
+                    <div className="d-grid mt-5">
+                        <button className="btn-danger" onClick={signOut}>
+                            Sign out
+                        </button>
+                    </div>
+                ) : (
+                    <div className="d-grid mt-5">
+                        <button className="btn-dark" onClick={signIn}>
+                            Sign in
+                        </button>
+                    </div>
+                )}
+            </BrowserRouter>
         </div>
-    );
+    )
 }
-
-const Navigation = () => (
-    <nav>
-        <Link to="/dashboard">Dashboard</Link>
-        <Link to="/admin">Admin</Link>
-    </nav>
-);
-
-export default App;
-
