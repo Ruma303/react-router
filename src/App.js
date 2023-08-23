@@ -2,11 +2,11 @@ import '../node_modules/bootstrap/dist/css/bootstrap.min.css'
 import './App.css'
 import { useState } from 'react'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
-import MenuBar from './components/MenuBar'
-import Home from './components/Home'
-import Dashboard from './components/Dashboard'
-import Products from './components/Products'
-import Protected from './components/Protected'
+import MenuBar from './Components/MenuBar';
+import Home from './views/Home'
+import Dashboard from './views/Dashboard'
+import Products from './views/Products'
+import Protected from './views/Protected'
 export default function App() {
     const [isSignedIn, setIsSignedIn] = useState(null)
     const signIn = () => {
