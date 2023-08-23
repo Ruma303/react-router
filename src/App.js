@@ -6,7 +6,7 @@ import MenuBar from './Components/MenuBar';
 import Home from './views/Home'
 import Dashboard from './views/Dashboard'
 import Products from './views/Products'
-import Protected from './views/Protected'
+import Protected from './Protected/Protected'
 export default function App() {
     const [isSignedIn, setIsSignedIn] = useState(null)
     const signIn = () => {
