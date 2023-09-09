@@ -52,9 +52,11 @@ function App() {
                         <Route path=":profileId" element={<Profile />} />
                     </Route>
 
+                    {/* http://localhost:3000/profile/Matteo */}
+
                     {/* Ricerca tramite slug */}
                     <Route path="/users" element={<UserList />} />
-                    <Route path="/users/:userId" element={<User />} />
+                    <Route path="/users/:userId/:par2" element={<User />} />
 
                     {/* Fallback Route */}
                     <Route path="*" element={<ErrorPage />} />
