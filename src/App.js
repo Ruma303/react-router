@@ -5,16 +5,14 @@ import 'bootstrap/dist/js/bootstrap.bundle.min';
 import Navbar from './Components/Navbar';
 import { routes } from './Routes/routes';
 import { BrowserRouter, useRoutes } from 'react-router-dom';
-function Routes() {
-  let element = useRoutes(routes);
-  return element;
-}
+import Routes from './Routes/RoutesComponent'
+
 function App() {
     return (
         <BrowserRouter>
             <div className="App container-fluid py-2">
                 <h1 className='fw-bold'>App.js</h1>
-                <Navbar/>
+                <Navbar />
                 <Routes />
             </div>
         </BrowserRouter>
