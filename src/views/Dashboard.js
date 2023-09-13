@@ -1,4 +1,5 @@
-import React from 'react'
+import React from 'react';
+
 function Dashboard() {
     return (
         <div className="card mt-5 text-center">

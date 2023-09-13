@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom'
+
 const MenuBar = () => {
     return (
         <nav className="d-flex justify-content-center">
